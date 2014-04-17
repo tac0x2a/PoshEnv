@@ -20,6 +20,7 @@ iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.p
 ```
 
 基本的なコマンド
+
 |コマンド                   | 意味                                                                     | 例                    |
 |:-------------------------:|:------------------------------------------------------------------------:|:---------------------:|
 |`cinst <package>`          |`<package>` をインストールする                                            |`cinst   emacs`        |
@@ -44,8 +45,3 @@ zoomit 4.50
 
 ## 何とかしたいこと
 - Chocolatey で `$Env:ProgramFiles` 以下にインストールされるファイルに自動でパス通したい
-
-
-
-
-
