@@ -32,16 +32,10 @@ iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.p
 ## 適当にパッケージ入れる
 とりあえずこんなん入れました。
 
-``powershell
-PS $ choco list -lo
-Emacs 24.3
-pscx 3.1.0
-winmerge 2.14.0
-zoomit 4.50
-``
-
-`pscx` は PowerShellに便利コマンド追加するパッケージ。 Linuxでおなじみの `touch` とか使えるようになる。
-
++ Emacs 24.3
++ pscx 3.1.0  - PowerShellに便利コマンド追加するパッケージ。 Linuxでおなじみの `touch` とか使えるようになる。
++ winmerge 2.14.0
++ zoomit 4.50
 
 ## 何とかしたいこと
 - Chocolatey で `$Env:ProgramFiles` 以下にインストールされるファイルに自動でパス通したい
