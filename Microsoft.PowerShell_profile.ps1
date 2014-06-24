@@ -21,6 +21,22 @@
 ## SourceTree 1.5.2
 ## steam 1.0.0.2
 
+# Install PsGet
+# (new-object Net.WebClient).DownloadString("http://psget.net/GetPsGet.ps1") | iex
+# install-module PsUrl
+
+# Install PSReadLine
+# install-module PSReadline
+if ($host.Name -eq 'ConsoleHost')
+{
+    Import-Module PSReadline
+    Set-PSReadlineOption -EditMode Emacs
+
+    Set-PSReadlineKeyHandler -Key Ctrl+p -Function HistorySearchBackward
+    Set-PSReadlineKeyHandler -Key Ctrl+n -Function HistorySearchForward
+}
+
+
 
 # $Env:Path
 ## Chocolatey

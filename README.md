@@ -37,5 +37,33 @@ iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.p
 + winmerge 2.14.0
 + zoomit 4.50
 
+## PSReadLineを導入する
+PSコンソールがUnixのシェルっぽい動きになる。
+
+まずは PsGet をインストールする
+```powershell
+(new-object Net.WebClient).DownloadString("http://psget.net/GetPsGet.ps1") | iex
+```
+
+PSReadLine をインストールする
+```powershell
+install-module PSReadline
+```
+
+こんな感じの設定を ``$PROFILE`` へ加える。
+```powershell
+if ($host.Name -eq 'ConsoleHost')
+{
+    Import-Module PSReadline
+    Set-PSReadlineOption -EditMode Emacs # キーバインドをEmacs風に
+
+    Set-PSReadlineKeyHandler -Key Ctrl+p -Function HistorySearchBackward
+    Set-PSReadlineKeyHandler -Key Ctrl+n -Function HistorySearchForward
+
+}
+```
+
+設定可能な ```Function``` は ```Get-PSReadlineKeyHandler``` で確認できる。
+
 ## 何とかしたいこと
 - Chocolatey で `$Env:ProgramFiles` 以下にインストールされるファイルに自動でパス通したい
